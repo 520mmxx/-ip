@@ -33,3 +33,15 @@ jobs:
         run: node .github/workflows/UpProxy.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+              - name: Commit and push changes
+      run: |
+        git config --global user.email "tianshideyou@proton.me"
+        git config --global user.name "tianshipapa"
+        if [ -n "$(git status --porcelain)" ]; then
+          git add ip.txt
+          git commit -m "Automatic update"
+          git push
+        else
+          echo "No changes detected, skipping commit."
+        fi
