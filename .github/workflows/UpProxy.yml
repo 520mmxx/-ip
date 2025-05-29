@@ -33,6 +33,3 @@ jobs:
         run: node .github/workflows/UpProxy.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-              - name: Commit and push changes
-
